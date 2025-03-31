@@ -119,7 +119,7 @@ class ReconReportGenerator:
     def highlight_diff(self, row):
         """Highlights mismatched cells."""
         styles = [''] * len(row)
-        for i in range(1, len(row), 2):
+        for i in range(len(self.config['comparison_keys']), len(row)-1, 2):
             if row.iloc[i] != row.iloc[i + 1]:
                 styles[i] = 'background-color: #FF6347'
                 styles[i + 1] = 'background-color: #FF6347'
