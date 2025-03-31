@@ -6,8 +6,8 @@ if __name__ == "__main__":
     print("## Starting Recon Engine...! ##")
     pd.set_option("display.max_columns", None)
 
-    file_path = "resources/Recon_Driver.xlsx"
-    config_df = ConfigLoader.read_config(file_path)
+    driver_config_file_path = "resources/Recon_Driver_Config.xlsx"
+    config_df = ConfigLoader.read_config(driver_config_file_path)
 
     for _, row in config_df.iterrows():
         config = {
