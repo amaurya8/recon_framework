@@ -1,7 +1,7 @@
 import datacompy
 from data_fetcher import DataFetcher
 from recon_reporter import ReconReportGenerator
-import logging
+from logger_config import logger
 
 
 class ReconEngine:
@@ -12,7 +12,7 @@ class ReconEngine:
 
     def run_recon(self):
         if self.source_data is None or self.target_data is None:
-            logging.error("## Data could not be loaded, please check configurations. ##")
+            logger.error("## Data could not be loaded, please check configurations. ##")
             return
 
         comparison = datacompy.Compare(
@@ -20,10 +20,10 @@ class ReconEngine:
             join_columns=self.config['comparison_keys']
         )
 
-        logging.info("Reconciliation completed. Generating report...")
+        logger.info("Reconciliation completed. Generating report...")
 
         # Generate and save the HTML report
         report_generator = ReconReportGenerator(comparison, self.source_data, self.target_data, self.config)
         report_generator.recon_report()
 
-        logging.info("Report generation completed successfully.")
+        logger.info("Report generation completed successfully.")

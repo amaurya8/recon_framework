@@ -1,40 +1,53 @@
 import pandas as pd
 from config_loader import ConfigLoader
 from recon_engine import ReconEngine
+import time
+from logger_config import logger
 
 if __name__ == "__main__":
-    print("## Starting Recon Engine...! ##")
+    logger.info("## Starting Recon Engine...! ##")
     pd.set_option("display.max_columns", None)
 
     driver_config_file_path = "resources/Recon_Driver_Config.xlsx"
     config_df = ConfigLoader.read_config(driver_config_file_path)
 
     for _, row in config_df.iterrows():
-        config = {
-            'source_name': row['Source Name'],
-            'source_type': row['Source Type'],
-            'source_detail': row['Source Detail'],
-            'source_db_type': row['Source DB Type'],
-            'source_host': row['Source Host'],
-            'source_port': row['Source Port'],
-            'source_database': row['Source Database'],
-            'source_user': row['Source User ID'],
-            'source_password': row['Source Password'],
-            'source_query_file': row['Source Query File'],
-            'target_name': row['Target Name'],
-            'target_type': row['Target Type'],
-            'target_detail': row['Target Detail'],
-            'target_db_type': row['Target DB Type'],
-            'target_host': row['Target Host'],
-            'target_port': row['Target Port'],
-            'target_database': row['Target Database'],
-            'target_user': row['Target User ID'],
-            'target_password': row['Target Password'],
-            'target_query_file': row['Target Query File'],
-            'comparison_keys': row['Comparison Keys'].split(',')
-        }
+        try:
+            config = {
+                'source_name': str(row['Source Name']).strip(),
+                'source_type': str(row['Source Type']).strip(),
+                'source_detail': str(row['Source Detail']).strip(),
+                'source_db_type': str(row['Source DB Type']).strip(),
+                'source_host': str(row['Source Host']).strip(),
+                'source_port': str(row['Source Port']).strip() if pd.notna(row['Source Port']) else '',
+                'source_database': str(row['Source Database']).strip(),
+                'source_user': str(row['Source User ID']).strip(),
+                'source_password': str(row['Source Password']).strip(),
+                'source_query_file': str(row['Source Query File']).strip(),
+                'target_name': str(row['Target Name']).strip(),
+                'target_type': str(row['Target Type']).strip(),
+                'target_detail': str(row['Target Detail']).strip(),
+                'target_db_type': str(row['Target DB Type']).strip(),
+                'target_host': str(row['Target Host']).strip(),
+                'target_port': str(row['Target Port']).strip() if pd.notna(row['Target Port']) else '',
+                'target_database': str(row['Target Database']).strip(),
+                'target_user': str(row['Target User ID']).strip(),
+                'target_password': str(row['Target Password']).strip(),
+                'target_query_file': str(row['Target Query File']).strip(),
+                'comparison_keys': [key.strip() for key in str(row['Comparison Keys']).split(',')]
+            }
 
-        recon_engine = ReconEngine(config)
-        recon_engine.run_recon()
+            logger.info(f"## Starting reconciliation for {config['source_name']} vs {config['target_name']} ##")
 
-    print("## Recon Completed...! ##")
+            start_time = time.time()
+            recon_engine = ReconEngine(config)
+            recon_engine.run_recon()
+            end_time = time.time()
+
+            execution_time_ms = round((end_time - start_time) * 1000, 2)
+            logger.info(f"## Recon completed for {config['source_name']} vs {config['target_name']} in {execution_time_ms} ms ##")
+
+        except Exception as e:
+            logger.error(f"Error processing reconciliation for {row.get('Source Name', 'Unknown')} vs {row.get('Target Name', 'Unknown')}: {e}")
+
+    logger.info("## Recon Engine Completed for All Configurations! ##")
