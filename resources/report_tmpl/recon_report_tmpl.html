@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+    }
+.topHeader {
+  height: 4.00vh;
+  width: 100.00vw;
+      background-color: #708090;
+
+<!--    background-color: #008080; -->
+<!--#A9A9A9 &#45;&#45; dark greay-->
+<!--  background-color: #FF6347;--> original orange
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0; /* Adjust the padding */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+     .logo {
+      width: 50px;
+      margin-right: 10px;
+    }
+.top {
+  height: 40.00vh;
+  width: 100.00vw;
+  background-color: #f2f2f2;
+  border: 3px double rgba(0, 0, 0, 0); /* Transparent double-lined border */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Adjust the value here */
+   margin-bottom: 10px; /* Add margin to the bottom of the top section */
+}
+    .middle {
+      display: flex;
+      height: 33.33vh;
+      width: 100.00vw;
+      background-color: #e6e6e6;
+      border: 1px double #000; /* Add 2-lined border to both halves */
+
+    }
+
+   .middle.collapsed {
+    height: 0; /* Collapse the middle section */
+   padding: 0; /* Optionally, remove padding when collapsed */
+   border-color: #FF6347; /* Change border color when collapsed */
+   border-width: 2px; /* Change border thickness when collapsed */
+    }
+
+    .left-half,
+    .right-half {
+      flex: 1; /* Divide the middle section into equal halves */
+      padding: 5px; /* Add padding to both halves */
+      border: 1px double #000; /* Add 2-lined border to both halves */
+      overflow-x: auto; /* Enable horizontal scrolling */
+
+    }
+
+    .bottom {
+      height: 33.33vh;
+      width: 100.00vw;
+      background-color: #d9d9d9;
+      border: 1px double #000; /* Add 2-lined border to both halves */
+    }
+
+       .bottom.collapsed {
+    height: 0; /* Collapse the middle section */
+   padding: 0; /* Optionally, remove padding when collapsed */
+   border-color: #008080; /* Change border color when collapsed */
+   border-width: 2px; /* Change border thickness when collapsed */
+    }
+
+    .chart-container {
+      width: 40.00%;
+      height: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+      cursor: pointer;
+    }
+
+    .chart-container:nth-child(3),
+    .chart-container:nth-child(6) {
+      border-bottom: none;
+    }
+
+    .chart-title {
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+/* Style for the tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #000;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      position: sticky; /* Make the table header sticky */
+      top: 0; /* Stick to the top */
+    }
+        /* Style for the scrollable div */
+    .scrollable {
+      overflow-y: auto; /* Add vertical scrollbar */
+      max-height: calc(100% - 60px); /* Set maximum height for right-half div minus padding */
+    }
+/* Style for the collapsible button */
+    .collapsible-btn {
+      background-color: #EAFFF1;
+      color: 1B4228;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .last_bottom {
+<!--      height: 33.33vh;-->
+      width: 100.00vw;
+      background-color: #d9d9d9;
+      border: 1px double #000; /* Add 2-lined border to both halves */
+    }
+
+  </style>
+    <script>
+        function toggleMiddle() {
+            var middleSection = document.querySelector('.middle');
+            middleSection.classList.toggle('collapsed');
+        }
+    </script>
+
+    <script>
+        function toggleBottom() {
+            var middleSection = document.querySelector('.bottom');
+            middleSection.classList.toggle('collapsed');
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+<div class="topHeader">
+<img src="logo.png" alt="Logo" style="float: left; width: 50px; height: 30px; transform: translate(-1390%,0%);position: absolute;left">
+    <header style="color: #007bff; font-size: 24px; font-weight: bold; text-transform: uppercase; display: inline-block; padding: 5px; border-radius: 5px;">
+        Data Recon Report
+    </header>
+    <p style = "display: inline  ; transform: translate(200%, -80%); position: absolute; font-family: 'Comic Sans MS';">Need Support: <a href="mailto: ashok.samar1@gmail.com">MailTo</a> </p>
+</div>
+    <div class="top">
+        <!-- Content for the top section -->
+<!--        <div class="topElement1">Sub Header 1</div>-->
+        <div class="chart-container">
+            <div class="chart-title">Summary</div>
+            <canvas id="chart1"></canvas>
+        </div>
+        <div class="chart-container" >
+            <div class="chart-title">Row Summary</div>
+            <canvas id="chart2"></canvas>
+            </div>
+            <div class="chart-container" >
+                <div class="chart-title">Column Summary</div>
+                <canvas id="chart3"></canvas>
+            </div>
+    </div>
+    <div class="middle" ondblclick="toggleMiddle()">
+        <!-- Content for the middle section -->
+        <div class="left-half">
+                <h3>Row Comparison Stats</h3>
+                <div class="scrollable">
+                <table>
+                    <tr>
+                        <th>Description</th>
+                        <th>Value</th>
+                    </tr>
+                    <tr>
+                        <td>Absolute Tolerance</td>
+                        <td>#absolute_tole#</td>
+                    </tr>
+                    <tr>
+                        <td>Relative Tolerance</td>
+                        <td>#relative_tole#</td>
+                    </tr>
+                    <tr>
+                        <td>Matched Keys</td>
+                        <td>#matched_keys#</td>
+                    </tr>
+                    <tr>
+                        <td>Any duplicates on match values in Src</td>
+                        <td>#duplicate_flag_src#</td>
+                    </tr>
+                    <tr>
+                        <td>Any duplicates on match values in Tgt</td>
+                        <td>#duplicate_flag_tgt#</td>
+                    </tr>
+                    <tr>
+                        <td>Ignore Spaces in values</td>
+                        <td>#spaces_ignored#</td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+        <div class="right-half">
+            <h3> Columns with un-eq values / types </h3>
+            <!-- Wrap the table in a scrollable div -->
+            <div class="scrollable">
+           #Columns with un-eq values / types#
+            </div>
+        </div>
+    </div>
+    <div class="bottom" ondblclick="toggleBottom()">
+        <h3>Rows with un-eq values</h3>
+                <div class="scrollable">
+        #Rows with un-eq values#
+                </div>
+    </div>
+    <div class="last_bottom">
+        <h3> Rows Only in Src (Default - 10 Rows/Cols) </h3>
+        <div class="scrollable">
+       #Rows Only In Src#
+        </div>
+    </div>
+    <div class="last_bottom">
+        <h3> Rows Only in Tgt (Default - 10 Rows/Cols) </h3>
+        <div class="scrollable">
+       #Rows Only In Tgt#
+        </div>
+    </div>
+<!--</div>-->
+</div>
+<script>
+
+var charts = [];
+
+for (var i = 1; i <= 3; i++) {
+  var chartCanvas = document.getElementById('chart' + i).getContext('2d');
+  var chartData;
+
+  if (i == 1) {
+    var varChartType = "line";
+    var reportSegmentChart = "Summary";
+    chartData = #Summary Chart#; // Providing sample data for Summary chart
+    charLabels = ['Src Row Count', 'Src Col Count ', 'Tgt Row Count', 'Tgt Col Count']
+    var backgroundColors = ['rgba(255, 99, 132, 0.5)', 'rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)', 'rgba(54, 162, 235, 0.5)'];
+    var pointBackgroundColors = ['rgba(255, 99, 132, 1)', 'rgba(255, 99, 132, 1)', 'rgba(54, 162, 235, 1)', 'rgba(54, 162, 235, 1)'];
+  } else if (i == 2) {
+    var varChartType = "doughnut";
+    var reportSegmentChart = "Row Summary";
+    charLabels = ['# Common Rows', '# Rows in Src not in Tgt ', '# Rows in Tgt not in Src', '# Rows having no mismatch','# Rows having mismatch']
+    chartData = #Row Summary#; // Providing sample data for Summary chart
+  } else {
+    var varChartType = "pie";
+    var reportSegmentChart = "Column Summary";
+    charLabels = ['# Common Cols', '# Cols in Src not in Tgt ', '# Cols in Tgt not in Src','# Cols having no mismatch','# Cols having mismatch']
+    chartData = #Column Summary#; // Providing sample data for Summary chart
+    var customColors = ['#D2691E', 'DarkGray', 'blue', 'MediumAquaMarine', 'DarkCyan']; // Custom colors for slices
+  }
+
+  var chart = new Chart(chartCanvas, {
+    type: varChartType,
+    data: {
+      labels: charLabels,
+      datasets: [{
+        data: chartData,
+        backgroundColor: customColors,
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1,
+        pointBackgroundColor: pointBackgroundColors, // Use different colors for the points
+        pointRadius: 5, // Set the radius of the points
+        pointHoverRadius: 7 // Set the radius of the points on hover
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      },
+      plugins: {
+        legend: {
+          display: false // Hide labels in legend
+        },
+        tooltip: {
+          enabled: true,
+          mode: 'index',
+          intersect: false
+        }
+      },
+      cutout: i == 2 ? '50%' : undefined, // Set cutout for doughnut chart only
+      barThickness: 50
+    }
+  });
+  if (i === 1 || i === 2 || i===3) {
+    document.querySelector('.chart-container:nth-child(' + i + ')').style.border = 'none'; // Remove border from the chart container
+  }
+  charts.push(chart);
+}
+
+
+// Function to navigate to URL
+function navigateToURL(url) {
+window.location.href = url;
+}
+</script>
+</body>
+</html>
