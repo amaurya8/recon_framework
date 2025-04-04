@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+from logger_config import logger  # Import global logger
 
 
 class ReconReportGenerator:
@@ -19,7 +20,8 @@ class ReconReportGenerator:
         template_content = self.load_template()
         populated_report = self.populate_template(template_content, summary_data, duplicate_flags, styled_html)
 
-        self.save_report(filename, populated_report)
+        self.save_html_report(filename, populated_report)
+        self.save_xlsx_reports("./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx")
 
     def generate_summary_stats(self):
         df_col_stats = self.comparison.column_stats
@@ -68,14 +70,16 @@ class ReconReportGenerator:
     def generate_styled_html(self):
         """Generates an HTML-styled DataFrame highlighting mismatches."""
         all_mismatch = self.comparison.all_mismatch()
-        styled_df = all_mismatch.style.apply(self.highlight_diff, axis=1)
+        if all_mismatch.shape[0] >500:
+            logger.info("Mismatched rows are greater than 500 rows. please refer xlsx report for full rows...")
+        styled_df = all_mismatch.head(500).style.apply(self.highlight_diff, axis=1)
         return styled_df.hide(axis=0)._repr_html_()
 
     def generate_report_filename(self):
         now = datetime.datetime.now()
         date_str = now.strftime("%Y-%m-%d")
         time_str = now.strftime("%H_%M_%S")
-        return f"./resources/recon_reports/recon_report_{self.config['source_name']}_{self.config['target_name']}_{date_str}_{time_str}.html"
+        return f"./resources/recon_reports/html/recon_report_{self.config['source_name']}_{self.config['target_name']}_{date_str}_{time_str}.html"
 
     def load_template(self):
         """Loads the HTML template for the reconciliation report."""
@@ -112,7 +116,7 @@ class ReconReportGenerator:
 
         return template
 
-    def save_report(self, filename, content):
+    def save_html_report(self, filename, content):
         with open(filename, 'w') as file:
             file.write(content)
 
@@ -124,3 +128,17 @@ class ReconReportGenerator:
                 styles[i] = 'background-color: #FF6347'
                 styles[i + 1] = 'background-color: #FF6347'
         return styles
+
+    def save_xlsx_reports(self, output_path):
+        try:
+            all_mismatch = self.comparison.all_mismatch()
+            with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
+                if hasattr(self.comparison, 'df1_unq_rows'):
+                    self.comparison.df1_unq_rows.to_excel(writer, sheet_name='src_unique_rows', index=False)
+                if hasattr(self.comparison, 'df2_unq_rows'):
+                    self.comparison.df2_unq_rows.to_excel(writer, sheet_name='tgt_unique_rows', index=False)
+                if len(all_mismatch)>500:
+                    all_mismatch.to_excel(writer, sheet_name='all_mismatched_rows', index=False)
+            logger.info(f"Comparison report saved at: {output_path}")
+        except Exception as e:
+            logger.error(f"Failed to save report: {e}")
