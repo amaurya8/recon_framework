@@ -71,9 +71,15 @@ class ReconReportGenerator:
         """Generates an HTML-styled DataFrame highlighting mismatches."""
         all_mismatch = self.comparison.all_mismatch()
         if all_mismatch.shape[0] >500:
-            logger.info("Mismatched rows are greater than 500 rows. please refer xlsx report for full rows...")
+            logger.info("Mismatched rows are greater than 500 rows. please refer xlsx report to analyse detailed differences...")
         styled_df = all_mismatch.head(500).style.apply(self.highlight_diff, axis=1)
         return styled_df.hide(axis=0)._repr_html_()
+
+    def generate_styled_diff_df(self):
+        """Generates styled DataFrame highlighting mismatches."""
+        all_mismatch = self.comparison.all_mismatch()
+        styled_df = all_mismatch.head(500).style.apply(self.highlight_diff, axis=1)
+        return styled_df
 
     def generate_report_filename(self):
         now = datetime.datetime.now()
@@ -132,13 +138,15 @@ class ReconReportGenerator:
     def save_xlsx_reports(self, output_path):
         try:
             all_mismatch = self.comparison.all_mismatch()
+            styled_diff_dataframe = self.generate_styled_diff_df()
             with pd.ExcelWriter(output_path, engine='xlsxwriter') as writer:
-                if hasattr(self.comparison, 'df1_unq_rows'):
+                if len(all_mismatch)>0:
+                    styled_diff_dataframe.to_excel(writer, sheet_name='all_mismatched_rows', index=False)
+                if hasattr(self.comparison, 'df1_unq_rows') and len(self.comparison.df1_unq_rows)>0:
                     self.comparison.df1_unq_rows.to_excel(writer, sheet_name='src_unique_rows', index=False)
-                if hasattr(self.comparison, 'df2_unq_rows'):
+                if hasattr(self.comparison, 'df2_unq_rows') and len(self.comparison.df2_unq_rows)>0:
                     self.comparison.df2_unq_rows.to_excel(writer, sheet_name='tgt_unique_rows', index=False)
-                if len(all_mismatch)>500:
-                    all_mismatch.to_excel(writer, sheet_name='all_mismatched_rows', index=False)
             logger.info(f"Comparison report saved at: {output_path}")
         except Exception as e:
             logger.error(f"Failed to save report: {e}")
+

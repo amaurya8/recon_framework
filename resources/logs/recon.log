@@ -563,3 +563,488 @@
 2025-04-05 00:09:15,018 - INFO - recon_engine - Report generation completed successfully.
 2025-04-05 00:09:15,018 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 1580.75 ms ##
 2025-04-05 00:09:15,019 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 14:40:53,516 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 14:40:55,609 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 14:40:55,614 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 14:40:57,138 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 14:40:57,138 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 14:40:58,640 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 14:40:58,649 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 14:40:58,651 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 14:40:58,666 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 14:40:58,667 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 14:40:58,672 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 14:40:58,685 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 14:40:58,685 - INFO - core - Number of columns in common: 5
+2025-04-05 14:40:58,685 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 14:40:58,686 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 14:40:58,758 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 14:40:58,758 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 14:40:58,760 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 14:40:58,761 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 14:40:58,767 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 14:40:58,771 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 14:40:58,775 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 14:40:58,778 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 14:40:58,779 - INFO - core - df1 does not match df2
+2025-04-05 14:40:58,779 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 14:40:59,795 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 14:40:59,801 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 14:40:59,802 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 1152.0 ms ##
+2025-04-05 14:40:59,802 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:10:17,197 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:10:18,095 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:10:18,097 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:10:18,667 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:10:18,668 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:10:19,390 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:10:19,401 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:10:19,402 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:10:19,415 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:10:19,418 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:10:19,422 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:10:19,433 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:10:19,434 - INFO - core - Number of columns in common: 5
+2025-04-05 15:10:19,434 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:10:19,434 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:10:19,487 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:10:19,487 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:10:19,488 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:10:19,489 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:10:19,492 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:10:19,495 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:10:19,497 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:10:19,500 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:10:19,500 - INFO - core - df1 does not match df2
+2025-04-05 15:10:19,501 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:10:20,065 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:10:20,066 - ERROR - recon_main - Error processing reconciliation for Legacy_Store_File vs New_Store_DB: 'Compare' object has no attribute 'columns_in_both'
+2025-04-05 15:10:20,066 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:12:13,943 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:12:14,649 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:12:14,652 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:12:15,199 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:12:15,199 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:12:15,897 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:12:15,901 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:12:15,902 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:12:15,911 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:12:15,912 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:12:15,915 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:12:15,922 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:12:15,923 - INFO - core - Number of columns in common: 5
+2025-04-05 15:12:15,923 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:12:15,923 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:12:15,963 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:12:15,963 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:12:15,964 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:12:15,964 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:12:15,968 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:12:15,970 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:12:15,972 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:12:15,974 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:12:15,975 - INFO - core - df1 does not match df2
+2025-04-05 15:12:15,975 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:12:16,440 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:12:16,441 - ERROR - recon_main - Error processing reconciliation for Legacy_Store_File vs New_Store_DB: 'method' object is not iterable
+2025-04-05 15:12:16,441 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:14:03,647 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:14:04,297 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:14:04,299 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:14:04,819 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:14:04,819 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:14:05,563 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:14:05,570 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:14:05,571 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:14:05,579 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:14:05,579 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:14:05,583 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:14:05,593 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:14:05,593 - INFO - core - Number of columns in common: 5
+2025-04-05 15:14:05,593 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:14:05,593 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:14:05,637 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:14:05,637 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:14:05,638 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:14:05,639 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:14:05,643 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:14:05,645 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:14:05,648 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:14:05,650 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:14:05,651 - INFO - core - df1 does not match df2
+2025-04-05 15:14:05,651 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:14:06,123 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:14:06,124 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:14:06,124 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 554.0 ms ##
+2025-04-05 15:14:06,124 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:16:09,116 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:16:10,107 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:16:10,115 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:16:10,913 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:16:10,914 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:16:11,797 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:16:11,807 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:16:11,807 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:16:11,818 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:16:11,819 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:16:11,822 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:16:11,833 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:16:11,833 - INFO - core - Number of columns in common: 5
+2025-04-05 15:16:11,833 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:16:11,834 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:16:11,886 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:16:11,886 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:16:11,887 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:16:11,887 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:16:11,892 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:16:11,895 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:16:11,897 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:16:11,899 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:16:11,900 - INFO - core - df1 does not match df2
+2025-04-05 15:16:11,900 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:16:12,109 - ERROR - recon_main - Error processing reconciliation for Legacy_Store_File vs New_Store_DB: name 'output_path' is not defined
+2025-04-05 15:16:12,110 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:16:44,889 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:16:45,581 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:16:45,585 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:16:46,081 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:16:46,081 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:16:46,634 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:16:46,648 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:16:46,648 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:16:46,696 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:16:46,697 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:16:46,704 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:16:46,784 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:16:46,784 - INFO - core - Number of columns in common: 5
+2025-04-05 15:16:46,784 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:16:46,785 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:16:46,903 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:16:46,904 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:16:46,907 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:16:46,908 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:16:46,913 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:16:46,918 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:16:46,922 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:16:46,925 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:16:46,926 - INFO - core - df1 does not match df2
+2025-04-05 15:16:46,926 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:16:47,585 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:16:47,586 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:16:47,586 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 937.96 ms ##
+2025-04-05 15:16:47,586 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:32:47,325 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:32:48,373 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:32:48,375 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:32:50,141 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:32:50,141 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:32:51,159 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:32:51,167 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:32:51,169 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:32:51,226 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:32:51,229 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:32:51,260 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:32:51,274 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:32:51,274 - INFO - core - Number of columns in common: 5
+2025-04-05 15:32:51,274 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:32:51,275 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:32:51,328 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:32:51,328 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:32:51,329 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:32:51,329 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:32:51,334 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:32:51,336 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:32:51,338 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:32:51,340 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:32:51,340 - INFO - core - df1 does not match df2
+2025-04-05 15:32:51,341 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:32:52,433 - ERROR - recon_reporter - Failed to save report: object of type 'Styler' has no len()
+2025-04-05 15:32:52,434 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:32:52,434 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 1267.72 ms ##
+2025-04-05 15:32:52,434 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:33:35,484 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:33:36,216 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:33:36,218 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:33:36,811 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:33:36,811 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:33:37,580 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:33:37,587 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:33:37,587 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:33:37,599 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:33:37,599 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:33:37,602 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:33:37,617 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:33:37,617 - INFO - core - Number of columns in common: 5
+2025-04-05 15:33:37,617 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:33:37,618 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:33:37,666 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:33:37,666 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:33:37,667 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:33:37,667 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:33:37,672 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:33:37,674 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:33:37,676 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:33:37,679 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:33:37,680 - INFO - core - df1 does not match df2
+2025-04-05 15:33:37,680 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:33:38,209 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:33:38,209 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:33:38,209 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 622.02 ms ##
+2025-04-05 15:33:38,209 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:40:42,781 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:40:43,667 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:40:43,670 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:40:44,369 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:40:44,369 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:40:45,138 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:40:45,143 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:40:45,144 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:40:45,153 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:40:45,154 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:40:45,157 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:40:45,167 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:40:45,167 - INFO - core - Number of columns in common: 5
+2025-04-05 15:40:45,167 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:40:45,167 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:40:45,211 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:40:45,212 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:40:45,213 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:40:45,213 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:40:45,217 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:40:45,220 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:40:45,222 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:40:45,224 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:40:45,225 - INFO - core - df1 does not match df2
+2025-04-05 15:40:45,225 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:40:45,527 - ERROR - recon_main - Error processing reconciliation for Legacy_Store_File vs New_Store_DB: 'ReconReportGenerator' object has no attribute 'save_xlsx_reports'
+2025-04-05 15:40:45,527 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:41:40,997 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:41:41,651 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:41:41,653 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:41:42,209 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:41:42,209 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:41:42,953 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:41:42,958 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:41:42,958 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:41:42,969 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:41:42,970 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:41:42,974 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:41:42,984 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:41:42,984 - INFO - core - Number of columns in common: 5
+2025-04-05 15:41:42,984 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:41:42,985 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:41:43,033 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:41:43,033 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:41:43,035 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:41:43,035 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:41:43,039 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:41:43,043 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:41:43,046 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:41:43,049 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:41:43,050 - INFO - core - df1 does not match df2
+2025-04-05 15:41:43,050 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:41:43,642 - ERROR - recon_reporter - Failed to save report: object of type 'Styler' has no len()
+2025-04-05 15:41:43,643 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:41:43,643 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 684.16 ms ##
+2025-04-05 15:41:43,643 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:43:12,099 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:43:12,662 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:43:12,664 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:43:13,219 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:43:13,219 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:43:14,015 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:43:14,019 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:43:14,020 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:43:14,028 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:43:14,029 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:43:14,032 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:43:14,040 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:43:14,041 - INFO - core - Number of columns in common: 5
+2025-04-05 15:43:14,041 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:43:14,041 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:43:14,078 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:43:14,078 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:43:14,079 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:43:14,079 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:43:14,082 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:43:14,083 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:43:14,086 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:43:14,088 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:43:14,088 - INFO - core - df1 does not match df2
+2025-04-05 15:43:14,088 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:43:14,569 - ERROR - recon_reporter - Failed to save report: object of type 'Styler' has no len()
+2025-04-05 15:43:14,570 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:43:14,570 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 550.0 ms ##
+2025-04-05 15:43:14,570 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:43:57,488 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:43:58,182 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:43:58,184 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:43:58,727 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:43:58,727 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:43:59,458 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:43:59,465 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:43:59,465 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:43:59,475 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:43:59,475 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:43:59,478 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:43:59,488 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:43:59,489 - INFO - core - Number of columns in common: 5
+2025-04-05 15:43:59,489 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:43:59,489 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:43:59,528 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:43:59,528 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:43:59,529 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:43:59,529 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:43:59,533 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:43:59,535 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:43:59,538 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:43:59,541 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:43:59,542 - INFO - core - df1 does not match df2
+2025-04-05 15:43:59,542 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:44:00,093 - ERROR - recon_reporter - Failed to save report: 'Styler' object has no attribute 'iloc'
+2025-04-05 15:44:00,094 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:44:00,094 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 629.0 ms ##
+2025-04-05 15:44:00,095 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:46:15,558 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:46:16,353 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:46:16,355 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:46:17,004 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:46:17,004 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:46:17,810 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:46:17,816 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:46:17,816 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:46:17,826 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:46:17,827 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:46:17,830 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:46:17,840 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:46:17,840 - INFO - core - Number of columns in common: 5
+2025-04-05 15:46:17,840 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:46:17,840 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:46:17,879 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:46:17,879 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:46:17,880 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:46:17,881 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:46:17,884 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:46:17,886 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:46:17,888 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:46:17,891 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:46:17,891 - INFO - core - df1 does not match df2
+2025-04-05 15:46:17,892 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:46:18,179 - ERROR - recon_main - Error processing reconciliation for Legacy_Store_File vs New_Store_DB: 'ReconReportGenerator' object has no attribute 'save_xlsx_reports'
+2025-04-05 15:46:18,179 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:46:44,254 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:46:44,842 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:46:44,845 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:46:45,286 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:46:45,286 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:46:45,822 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:46:45,826 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:46:45,827 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:46:45,835 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:46:45,835 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:46:45,839 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:46:45,846 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:46:45,847 - INFO - core - Number of columns in common: 5
+2025-04-05 15:46:45,847 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:46:45,847 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:46:45,881 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:46:45,881 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:46:45,882 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:46:45,882 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:46:45,885 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:46:45,887 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:46:45,889 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:46:45,891 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:46:45,891 - INFO - core - df1 does not match df2
+2025-04-05 15:46:45,892 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:46:46,349 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:46:46,349 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:46:46,349 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 522.01 ms ##
+2025-04-05 15:46:46,349 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:50:01,186 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:50:01,855 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:50:01,857 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:50:02,447 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:50:02,447 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:50:03,192 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:50:03,198 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:50:03,199 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:50:03,210 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:50:03,210 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:50:03,213 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:50:03,223 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:50:03,223 - INFO - core - Number of columns in common: 5
+2025-04-05 15:50:03,223 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:50:03,224 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:50:03,281 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:50:03,282 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:50:03,283 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:50:03,283 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:50:03,291 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:50:03,294 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:50:03,298 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:50:03,302 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:50:03,303 - INFO - core - df1 does not match df2
+2025-04-05 15:50:03,303 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:50:03,724 - ERROR - recon_reporter - Failed to save report: [Errno 13] Permission denied: './resources/recon_reports/xlsx/comprehensive_recon_report.xlsx'
+2025-04-05 15:50:03,724 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:50:03,724 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 525.0 ms ##
+2025-04-05 15:50:03,724 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:50:20,489 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:50:21,110 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:50:21,112 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:50:21,580 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:50:21,580 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:50:22,120 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:50:22,126 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:50:22,126 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:50:22,135 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:50:22,136 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:50:22,139 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:50:22,148 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:50:22,148 - INFO - core - Number of columns in common: 5
+2025-04-05 15:50:22,148 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:50:22,149 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:50:22,187 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:50:22,187 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:50:22,188 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:50:22,189 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:50:22,192 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:50:22,195 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:50:22,198 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:50:22,202 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:50:22,203 - INFO - core - df1 does not match df2
+2025-04-05 15:50:22,204 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:50:22,780 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:50:22,780 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:50:22,780 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 653.78 ms ##
+2025-04-05 15:50:22,780 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
+2025-04-05 15:50:42,105 - WARNING - fugue - Please note that you are missing the optional dependency: fugue. If you need to use this functionality it must be installed.
+2025-04-05 15:50:42,745 - WARNING - sql - Please note that you are missing the optional dependency: spark. If you need to use this functionality it must be installed.
+2025-04-05 15:50:42,748 - WARNING - snowflake - Please note that you are missing the optional dependency: snowflake. If you need to use this functionality it must be installed.
+2025-04-05 15:50:43,231 - INFO - recon_main - ## Starting Recon Engine...! ##
+2025-04-05 15:50:43,231 - INFO - config_loader - Loading configuration from resources/Recon_Driver_Config.xlsx...
+2025-04-05 15:50:43,810 - INFO - config_loader - Successfully loaded 1 configuration rows.
+2025-04-05 15:50:43,816 - INFO - recon_main - ## Starting reconciliation for Legacy_Store_File vs New_Store_DB ##
+2025-04-05 15:50:43,817 - INFO - data_fetcher - Loading file resources/src_input_files/Stores.csv with extension .csv...
+2025-04-05 15:50:43,829 - INFO - data_fetcher - Successfully loaded file: resources/src_input_files/Stores.csv
+2025-04-05 15:50:43,829 - INFO - data_fetcher - Loading file resources/tgt_input_files/Stores_new.csv with extension .csv...
+2025-04-05 15:50:43,832 - INFO - data_fetcher - Successfully loaded file: resources/tgt_input_files/Stores_new.csv
+2025-04-05 15:50:43,844 - INFO - core - df1 does not Pandas.DataFrame.equals df2
+2025-04-05 15:50:43,844 - INFO - core - Number of columns in common: 5
+2025-04-05 15:50:43,844 - INFO - core - Number of columns in df1 and not in df2: 0
+2025-04-05 15:50:43,844 - INFO - core - Number of columns in df2 and not in df1: 0
+2025-04-05 15:50:43,893 - INFO - core - Number of rows in df1 and not in df2: 0
+2025-04-05 15:50:43,894 - INFO - core - Number of rows in df2 and not in df1: 4
+2025-04-05 15:50:43,895 - INFO - core - Number of rows in df1 and df2 (not necessarily equal): 896
+2025-04-05 15:50:43,896 - INFO - core - store_id: 896 / 896 (100.00%) match
+2025-04-05 15:50:43,901 - INFO - core - store_area: 891 / 896 (99.44%) match
+2025-04-05 15:50:43,904 - INFO - core - items_available: 895 / 896 (99.89%) match
+2025-04-05 15:50:43,907 - INFO - core - daily_customer_count: 896 / 896 (100.00%) match
+2025-04-05 15:50:43,911 - INFO - core - store_sales: 894 / 896 (99.78%) match
+2025-04-05 15:50:43,912 - INFO - core - df1 does not match df2
+2025-04-05 15:50:43,912 - INFO - recon_engine - Reconciliation completed. Generating report...
+2025-04-05 15:50:44,426 - INFO - recon_reporter - Comparison report saved at: ./resources/recon_reports/xlsx/comprehensive_recon_report.xlsx
+2025-04-05 15:50:44,426 - INFO - recon_engine - Report generation completed successfully.
+2025-04-05 15:50:44,427 - INFO - recon_main - ## Recon completed for Legacy_Store_File vs New_Store_DB in 610.0 ms ##
+2025-04-05 15:50:44,428 - INFO - recon_main - ## Recon Engine Completed for All Configurations! ##
