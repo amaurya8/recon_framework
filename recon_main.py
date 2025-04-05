@@ -4,6 +4,8 @@ from recon_engine import ReconEngine
 import time
 from logger_config import logger
 
+""" This module contains logic for recon orchestration ( looping ) for multiple data sets ( source and target systems ) """
+
 if __name__ == "__main__":
     logger.info("## Starting Recon Engine...! ##")
     pd.set_option("display.max_columns", None)

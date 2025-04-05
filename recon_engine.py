@@ -3,6 +3,7 @@ from data_fetcher import DataFetcher
 from recon_reporter import ReconReportGenerator
 from logger_config import logger
 
+""" This Class contains logic for recon — makes debugging simpler and will evolve over time, we can other pre recon logic / method when-ever required."""
 
 class ReconEngine:
     def __init__(self, config):
