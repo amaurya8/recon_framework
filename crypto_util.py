@@ -4,7 +4,7 @@ import base64
 class CryptoUtil:
     """Utility class for encrypting and decrypting passwords without requiring a key"""
 
-    SECRET = "CustomSecretPhrase"  # Define a secret logic for shifting characters
+    SECRET = "CustomSecretPhrase"  # Define a secret logic for shifting characters , change as per need
 
     @staticmethod
     def _get_shift_value():
