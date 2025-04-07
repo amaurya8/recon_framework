@@ -9,7 +9,11 @@ class ReconEngine:
     def __init__(self, config):
         self.config = config
         self.source_data = DataFetcher.fetch_data(self.config, is_source=True)
+        if self.source_data is None:
+            raise DataLoadError("Source data could not be loaded. Please check the source configuration.")
         self.target_data = DataFetcher.fetch_data(self.config, is_source=False)
+        if self.target_data is None:
+            raise DataLoadError("Target data could not be loaded. Please check the target configuration.")
 
     def run_recon(self):
         if self.source_data is None or self.target_data is None:
@@ -28,3 +32,6 @@ class ReconEngine:
         report_generator.recon_report()
 
         logger.info("Report generation completed successfully.")
+
+class DataLoadError(Exception):
+    pass

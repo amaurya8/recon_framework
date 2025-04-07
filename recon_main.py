@@ -1,6 +1,6 @@
 import pandas as pd
 from config_loader import ConfigLoader
-from recon_engine import ReconEngine
+from recon_engine import ReconEngine, DataLoadError
 import time
 from logger_config import logger
 
@@ -48,6 +48,9 @@ if __name__ == "__main__":
 
             execution_time_ms = round((end_time - start_time) * 1000, 2)
             logger.info(f"## Recon completed for {config['source_name']} vs {config['target_name']} in {execution_time_ms} ms ##")
+
+        except DataLoadError as e:
+            logger.error(" Source or Target Data loading issues, please check configuration file:", str(e))
 
         except Exception as e:
             logger.error(f"Error processing reconciliation for {row.get('Source Name', 'Unknown')} vs {row.get('Target Name', 'Unknown')}: {e}")
