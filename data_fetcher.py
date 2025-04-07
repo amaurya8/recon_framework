@@ -1,16 +1,17 @@
-import pandas as pd
 import os
 import xml.etree.ElementTree as ET
-from db_connector import DBConnector
-from logger_config import logger  # Import global logger
 
+import pandas as pd
+
+from cloud_connector import CloudConnector
+from db_connector import DBConnector
+from logger_config import logger
 
 class DataFetcher:
     @staticmethod
     def fetch_data(config, is_source=True):
         system_type = "source" if is_source else "target"
 
-        # Fetch configurations safely
         system_type_key = f"{system_type}_type"
         file_path = config.get(f"{system_type}_detail")
         db_type = config.get(f"{system_type}_db_type", "").lower()
@@ -22,12 +23,12 @@ class DataFetcher:
         query_file = config.get(f"{system_type}_query_file")
 
         if not config.get(system_type_key):
-            logger.error(f"Missing '{system_type_key}' in configuration")
-            return None
+            raise DataLoadError(f"Missing '{system_type_key}' in configuration")
 
         data = None
+        system_source = config[system_type_key].lower()
 
-        if config[system_type_key].lower() == 'file':
+        if system_source == 'file':
             if not file_path or not os.path.exists(file_path):
                 logger.error(f"File not found: {file_path}")
                 return None
@@ -41,12 +42,12 @@ class DataFetcher:
                 elif file_ext in ['.xls', '.xlsx']:
                     data = pd.read_excel(file_path)
                 elif file_ext == '.txt':
-                    data = pd.read_csv(file_path, delimiter=",")  # Adjust delimiter as needed
+                    data = pd.read_csv(file_path, delimiter=",")
                 elif file_ext == '.json':
                     data = pd.read_json(file_path)
                 elif file_ext == '.xml':
                     data = DataFetcher.load_xml(file_path)
-                elif file_ext == '.fwf':  # Fixed Width File
+                elif file_ext == '.fwf':
                     data = pd.read_fwf(file_path)
                 else:
                     logger.warning(f"Unsupported file type: {file_ext}. Attempting to load as CSV.")
@@ -57,7 +58,7 @@ class DataFetcher:
                 logger.error(f"Error loading file {file_path}: {e}")
                 return None
 
-        elif config[system_type_key].lower() == 'database':
+        elif system_source == 'database':
             if not query_file or not os.path.exists(query_file):
                 logger.error(f"Query file not found: {query_file}")
                 return None
@@ -90,6 +91,23 @@ class DataFetcher:
                 if conn:
                     conn.close()
 
+        elif system_source == 'adls':
+            try:
+                conn_str, container, folder_path, file_type = file_path.split('|')
+                logger.info(f"Reading ADLS for {system_type}: container={container}, path={folder_path}, type={file_type}")
+                CloudConnector.read_all_files_from_adls_folder_with_connection_string(conn_str,container,folder_path,file_type)
+                logger.info(f"ADLS load successful for {system_type}")
+            except Exception as e:
+                raise DataLoadError(f"Failed to load from ADLS for {system_type}: {e}")
+
+        elif system_source == 'adx':
+            try:
+                cluster_uri, db, query_file_path, client_id, client_secret, authority_id = file_path.split('|')
+                CloudConnector.fetch_adx_data(cluster_uri,db,query_file_path,client_id,client_secret,authority_id)
+                logger.info(f"ADX query executed successfully for {system_type}")
+            except Exception as e:
+                raise DataLoadError(f"Failed to load from ADX for {system_type}: {e}")
+
         return data
 
     @staticmethod
@@ -110,3 +128,5 @@ class DataFetcher:
         except Exception as e:
             logger.error(f"Error loading XML file {file_path}: {e}")
             return None
+class DataLoadError(Exception):
+    pass
