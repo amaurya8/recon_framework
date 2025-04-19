@@ -16,6 +16,7 @@ if __name__ == "__main__":
     for _, row in config_df.iterrows():
         try:
             config = {
+                'Use_Case_Id': str(row['Use Case']).strip(),
                 'source_name': str(row['Source Name']).strip(),
                 'source_type': str(row['Source Type']).strip(),
                 'source_detail': str(row['Source Detail']).strip(),
@@ -42,7 +43,7 @@ if __name__ == "__main__":
             logger.info(f"## Starting reconciliation for {config['source_name']} vs {config['target_name']} ##")
 
             start_time = time.time()
-            recon_engine = ReconEngine(config)
+            recon_engine = ReconEngine(config,driver_config_file_path)
             recon_engine.run_recon()
             end_time = time.time()
 
